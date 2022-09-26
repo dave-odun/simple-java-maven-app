@@ -7,5 +7,15 @@ pipeline {
       }
     }
 
+    stage('Docker Env') {
+      steps {
+        dockerNode(image: 'node:current-alpine3.16') {
+          sh '''pwd 
+ls'''
+        }
+
+      }
+    }
+
   }
 }
